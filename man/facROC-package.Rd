@@ -1,6 +1,5 @@
 \name{facROC-package}
 \alias{facROC-package}
-\alias{facROC}
 \docType{package}
 \title{
 What the package does (short line)
