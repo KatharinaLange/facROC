@@ -1,0 +1,9 @@
+Package: facROC
+Type: Package
+Title: What the package does (short line)
+Version: 0.15
+Date: 2012-11-17
+Author: Katharina Lange
+Maintainer: Katharina Lange <katharina.lange@medizin.uni-goettingen.de>
+Description: More about what it does (maybe more than one line)
+License: GPL-2

@@ -1,0 +1,8 @@
+export(facROC)
+export(print.facROC)
+export(plot.facROC)
+export(summary.facROC)
+export(facBinary)
+export(print.facBinary)
+export(summary.facBinary)
+export(plotROC)
