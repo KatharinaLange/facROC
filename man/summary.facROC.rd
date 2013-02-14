@@ -2,10 +2,10 @@
 \alias{summary.facROC}
 \title{The function returns the results of the ANOVA-type statistic performed by facROC.}
 \usage{
-  summary.facROC(x, ... )
+  summary.facROC(object, ... )
 }
 \arguments{
-  \item{x}{a facROC object to be plotted}
+  \item{object}{a facROC object to be plotted}
   \item{...}{Parameters that are passed to the function summary.}
 }
 \value{}

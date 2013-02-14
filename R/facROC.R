@@ -144,7 +144,7 @@ function(formula, id=id, gold=gold, data= parent.frame(), logit=FALSE, alpha=0.0
     }  
   else{
     logitAUC <- flogit(AUC)
-    logitCov <- diag(dflogit(AUC)) %*% Cov %*% diag(dflogit(AUC))
+    logitCov <- logitCov(AUC,Cov)
     result.temp <- lapply(hyp.matrix,ANOVA.type,n=n,AUC=logitAUC,Vn=logitCov)
     result <- matrix(unlist(result.temp),ncol=3,byrow=TRUE)
     conf.int <- invlogit(conf.int(AUC=logitAUC,n=nlist,Vn=logitCov,alpha=alpha))
@@ -154,8 +154,8 @@ function(formula, id=id, gold=gold, data= parent.frame(), logit=FALSE, alpha=0.0
   colnames(result) <- c("Statistic", "df", "p-value")
   result <- data.frame(round(result,digits=4))
   parameters <- list(formula, m$"(id)", m$"(gold)", data)
-  final <- list(result.AUC,result,parameters)
-  names(final) <- c("estimators", "teststatistic", "parameters")
+  final <- list(result.AUC,result,parameters,Cov,n, hyp.matrix)
+  names(final) <- c("estimators", "teststatistic", "parameters", "Cov", "n", "hypmatrix")
   class(final) <- c(class(final), "facROC")
   #class(final) <- "facROC"
   return(final)

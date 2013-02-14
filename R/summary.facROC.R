@@ -1,6 +1,6 @@
 summary.facROC <-
-function(x,...){
+function(object,...){
    cat("ANOVA-Type Statistic \n")
-   print(x$teststatistic)
+   print(object$teststatistic)
    cat("\n")
    }

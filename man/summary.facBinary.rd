@@ -2,10 +2,10 @@
 \alias{summary.facBinary}
 \title{The function returns the results of the ANOVA-type statistic performed by facBinary.}
 \usage{
-  summary.facBinary(x, ... )
+  summary.facBinary(object, ... )
 }
 \arguments{
-  \item{x}{a facBinary object to be plotted}
+  \item{object}{a facBinary object to be plotted}
   \item{...}{Parameters that are passed to the function summary.}
 }
 \value{}

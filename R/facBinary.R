@@ -31,11 +31,17 @@ sens1 <- facROC(formula=formula,id=X.id.,gold=X.gold., data=data.sens,logit=logi
 sens= list()
 sens$estimators <- sens1$estimators
 sens$teststatistic <- sens1$teststatistic
+sens$Cov <- sens1$Cov
+sens$n <- sens1$n
+sens$hypmatrix <- sens1$hypmatrix
 }
 else{
 sens = list()
 sens$estimators = "There were no diseased observations found in the dataset."
-sens$teststatistic = "."}
+sens$teststatistic = "."
+sens$Cov <- sens1$Cov
+sens$n <- sens1$n
+sens$hypmatrix <- sens1$hypmatrix}
 
 if (any(m$"(gold)"==0)) {
 data.spec <- pseudo.spec <- m[m$"(gold)"==0,]
@@ -53,13 +59,18 @@ speci1 <- facROC(formula=formula,id=X.id.,gold=X.gold., data=data.spec,logit=log
 speci= list()
 speci$estimators <- speci1$estimators
 speci$teststatistic <- speci1$teststatistic
-
+speci$Cov <- speci1$Cov
+speci$n <- speci1$n
+speci$hypmatrix <- speci$hypmatrix
 }
 else{
 
 speci=list()
 speci$estimators  ="There were no non-diseased observations found in the dataset."
-speci$teststatistic = "."}
+speci$teststatistic = "."
+speci$Cov <- speci1$Cov
+speci$n <- speci1$n
+speci$hypmatrix <- speci$hypmatrix}
 
 result <- list(sens,speci)
 names(result) <- c("sensitivity", "specificity")

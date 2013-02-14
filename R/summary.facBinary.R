@@ -1,11 +1,11 @@
 summary.facBinary <-
-function(x,...){
+function(object,...){
    cat("Sensitivity \n")
    cat("ANOVA-Type Statistic \n")
-   print(x$sensitivity$teststatistic)
+   print(object$sensitivity$teststatistic)
    cat("\n")
    cat("Specificity \n")
    cat("ANOVA-Type Statistic \n")
-   print(x$specificity$teststatistic)
+   print(object$specificity$teststatistic)
    cat("\n")
    }
